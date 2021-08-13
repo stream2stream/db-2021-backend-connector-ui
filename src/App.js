@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import {Form} from './login_form'
+import {appStyle} from './login_form_styling';
 
-function App() {
+
+const App = () => {
+  const handleSubmit = data => {
+      const json = JSON.stringify(data, null, 4);
+      console.clear();
+      console.log(json);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={appStyle}>
+      <Form onSubmit={handleSubmit} />
     </div>
   );
-}
+};
 
 export default App;
